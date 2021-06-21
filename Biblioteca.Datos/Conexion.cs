@@ -20,7 +20,7 @@ namespace Biblioteca.Datos
         private Conexion()
         {
             this.database = "NCapas_biblioteca";
-            this.server = "NCAPASBIBLIOTECA";
+            this.server = "DESKTOP-CAUO8GB\\NCAPASBIBLIOTECA";
             this.user = "sa";
             this.key = "root";
             this.seguridad = false;
