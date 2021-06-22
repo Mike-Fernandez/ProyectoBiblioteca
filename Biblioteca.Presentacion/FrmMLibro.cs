@@ -22,7 +22,7 @@ namespace Biblioteca.Presentacion
         {
             try
             {
-                dgvListado.DataSource = NLibro.listarAvailable();
+                dgvListado.DataSource = NLibro.listarTodos();
                 this.Formato();
                 lblTotal.Text = "Total registros " + Convert.ToString(dgvListado.Rows.Count);
             }
@@ -38,12 +38,12 @@ namespace Biblioteca.Presentacion
             {
                 if (Convert.ToString(cboBuscar.SelectedValue) == "Titulo")
                 {
-                    dgvListado.DataSource = NLibro.buscarTituloAvailable(txtBuscar.Text);
+                    dgvListado.DataSource = NLibro.buscarTitulo(txtBuscar.Text);
                     lblTotal.Text = "Total registros " + Convert.ToString(dgvListado.Rows.Count);
                 }
                 else if (Convert.ToString(cboBuscar.SelectedValue) == "Autor")
                 {
-                    dgvListado.DataSource = NLibro.buscarAutorAvailable(txtBuscar.Text);
+                    dgvListado.DataSource = NLibro.buscarAutor(txtBuscar.Text);
                     lblTotal.Text = "Total registros " + Convert.ToString(dgvListado.Rows.Count);
                 }
             }
