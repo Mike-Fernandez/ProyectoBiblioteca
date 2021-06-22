@@ -1,7 +1,7 @@
 ﻿
 namespace Biblioteca.Presentacion
 {
-    partial class FrmLibro
+    partial class FrmCatalogo
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace Biblioteca.Presentacion
         private void InitializeComponent()
         {
             this.dgvListadoLibros = new System.Windows.Forms.DataGridView();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoLibros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,27 +38,19 @@ namespace Biblioteca.Presentacion
             this.dgvListadoLibros.AllowUserToAddRows = false;
             this.dgvListadoLibros.AllowUserToDeleteRows = false;
             this.dgvListadoLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Seleccionar});
-            this.dgvListadoLibros.Location = new System.Drawing.Point(39, 39);
+            this.dgvListadoLibros.Location = new System.Drawing.Point(12, 12);
             this.dgvListadoLibros.Name = "dgvListadoLibros";
             this.dgvListadoLibros.ReadOnly = true;
-            this.dgvListadoLibros.Size = new System.Drawing.Size(728, 351);
+            this.dgvListadoLibros.Size = new System.Drawing.Size(776, 426);
             this.dgvListadoLibros.TabIndex = 0;
             // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
-            // 
-            // FrmLibro
+            // FrmSeleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvListadoLibros);
-            this.Name = "FrmLibro";
+            this.Name = "FrmSeleccion";
             this.Text = "FrmLibro";
             this.Load += new System.EventHandler(this.FrmLibro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoLibros)).EndInit();
@@ -70,6 +61,5 @@ namespace Biblioteca.Presentacion
         #endregion
 
         private System.Windows.Forms.DataGridView dgvListadoLibros;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
     }
 }

@@ -32,6 +32,7 @@ namespace Biblioteca.Presentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.seleccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bibliotecaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.librosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,6 +63,11 @@ namespace Biblioteca.Presentacion
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.devolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.librosRegistradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prestamosActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -70,10 +76,12 @@ namespace Biblioteca.Presentacion
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.seleccionToolStripMenuItem,
             this.bibliotecaToolStripMenuItem,
             this.viewMenu,
             this.windowsMenu,
-            this.helpMenu});
+            this.helpMenu,
+            this.salirToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
@@ -81,14 +89,23 @@ namespace Biblioteca.Presentacion
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
+            // seleccionToolStripMenuItem
+            // 
+            this.seleccionToolStripMenuItem.Name = "seleccionToolStripMenuItem";
+            this.seleccionToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
+            this.seleccionToolStripMenuItem.Text = "Consultar Material";
+            this.seleccionToolStripMenuItem.Click += new System.EventHandler(this.seleccionToolStripMenuItem_Click);
+            // 
             // bibliotecaToolStripMenuItem
             // 
             this.bibliotecaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.librosToolStripMenuItem,
-            this.prestamosToolStripMenuItem});
+            this.prestamosToolStripMenuItem,
+            this.devolucionesToolStripMenuItem,
+            this.reportesToolStripMenuItem});
             this.bibliotecaToolStripMenuItem.Name = "bibliotecaToolStripMenuItem";
-            this.bibliotecaToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.bibliotecaToolStripMenuItem.Text = "Biblioteca";
+            this.bibliotecaToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
+            this.bibliotecaToolStripMenuItem.Text = "Mantenimiento";
             // 
             // librosToolStripMenuItem
             // 
@@ -324,6 +341,40 @@ namespace Biblioteca.Presentacion
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
+            // devolucionesToolStripMenuItem
+            // 
+            this.devolucionesToolStripMenuItem.Name = "devolucionesToolStripMenuItem";
+            this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.devolucionesToolStripMenuItem.Text = "Devoluciones";
+            // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.librosRegistradosToolStripMenuItem,
+            this.prestamosActivosToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // librosRegistradosToolStripMenuItem
+            // 
+            this.librosRegistradosToolStripMenuItem.Name = "librosRegistradosToolStripMenuItem";
+            this.librosRegistradosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.librosRegistradosToolStripMenuItem.Text = "Libros Registrados";
+            // 
+            // prestamosActivosToolStripMenuItem
+            // 
+            this.prestamosActivosToolStripMenuItem.Name = "prestamosActivosToolStripMenuItem";
+            this.prestamosActivosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.prestamosActivosToolStripMenuItem.Text = "Prestamos Activos";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +432,12 @@ namespace Biblioteca.Presentacion
         private System.Windows.Forms.ToolStripMenuItem viewMenu;
         private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seleccionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem devolucionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem librosRegistradosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prestamosActivosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 

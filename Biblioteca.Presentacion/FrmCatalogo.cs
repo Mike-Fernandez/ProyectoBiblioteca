@@ -11,9 +11,9 @@ using Biblioteca.Negocio;
 
 namespace Biblioteca.Presentacion
 {
-    public partial class FrmLibro : Form
+    public partial class FrmCatalogo : Form
     {
-        public FrmLibro()
+        public FrmCatalogo()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace Biblioteca.Presentacion
         {
             try
             {
-                dgvListadoLibros.DataSource = NLibro.Listar();
+                dgvListadoLibros.DataSource = NLibro.listarTodos();
             }
             catch(Exception ex)
             {

@@ -104,11 +104,26 @@ namespace Biblioteca.Presentacion
             }
         }
 
-        private void librosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void seleccionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmLibro frm = new FrmLibro();
+            FrmCatalogo frm = new FrmCatalogo();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult opcion;
+            opcion = MessageBox.Show("Desea salir del sistema?", "Sistema de ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (opcion == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void librosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,19 +52,28 @@
     <Compile Include="FrmHome.Designer.cs">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLibro.cs">
+    <Compile Include="FrmMLibro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLibro.Designer.cs">
-      <DependentUpon>FrmLibro.cs</DependentUpon>
+    <Compile Include="FrmMLibro.Designer.cs">
+      <DependentUpon>FrmMLibro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCatalogo.Designer.cs">
+      <DependentUpon>FrmCatalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLibro.resx">
-      <DependentUpon>FrmLibro.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCatalogo.resx">
+      <DependentUpon>FrmCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMLibro.resx">
+      <DependentUpon>FrmMLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
