@@ -64,6 +64,12 @@
     <Compile Include="FrmCatalogo.Designer.cs">
       <DependentUpon>FrmCatalogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPrestamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrestamo.Designer.cs">
+      <DependentUpon>FrmPrestamo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmHome.resx">
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMLibro.resx">
       <DependentUpon>FrmMLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrestamo.resx">
+      <DependentUpon>FrmPrestamo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
