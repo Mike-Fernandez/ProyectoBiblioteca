@@ -123,7 +123,9 @@ namespace Biblioteca.Presentacion
 
         private void librosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmMLibro frm = new FrmMLibro();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

@@ -23,16 +23,58 @@ namespace Biblioteca.Presentacion
             try
             {
                 dgvListadoLibros.DataSource = NLibro.listarTodos();
+                lblTotal.Text = "Total registros " + Convert.ToString(dgvListadoLibros.Rows.Count);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
 
+        private void Buscar()
+        {
+            try
+            {
+                if (Convert.ToString(cboBuscar.SelectedValue) == "Titulo")
+                {
+                    dgvListadoLibros.DataSource = NLibro.buscarTitulo(txtBuscar.Text);
+                    lblTotal.Text = "Total registros " + Convert.ToString(dgvListadoLibros.Rows.Count);
+                } else if (Convert.ToString(cboBuscar.SelectedValue) == "Autor")
+                {
+                    dgvListadoLibros.DataSource = NLibro.buscarAutor(txtBuscar.Text);
+                    lblTotal.Text = "Total registros " + Convert.ToString(dgvListadoLibros.Rows.Count);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Limpiar()
+        {
+            txtBuscar.Clear();
+            errorIcono.Clear();
+        }
+
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Sistema de ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void FrmLibro_Load(object sender, EventArgs e)
         {
             this.Listar();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            this.Buscar();
         }
     }
 }

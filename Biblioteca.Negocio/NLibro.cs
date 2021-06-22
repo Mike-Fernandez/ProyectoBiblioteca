@@ -41,6 +41,18 @@ namespace Biblioteca.Negocio
             return data.buscarAutor(valor);
         }
 
+        public static DataTable buscarTituloAvailable(string valor)
+        {
+            DLibro data = new DLibro();
+            return data.buscarTituloAvailable(valor);
+        }
+
+        public static DataTable buscarAutorAvailable(string valor)
+        {
+            DLibro data = new DLibro();
+            return data.buscarAutorAvailable(valor);
+        }
+
         public static string Insertar(int numeroEjemplares, int isbn, string titulo, string autor, 
             string editorial, string editionYear, int numeroEdicion, string pais, string idioma, 
             string materia, int numeroPaginas, string ubicacion, string descripcion)
