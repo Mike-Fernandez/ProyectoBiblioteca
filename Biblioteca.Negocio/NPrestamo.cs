@@ -20,6 +20,7 @@ namespace Biblioteca.Negocio
         public static string crearPrestamo(int codigoLibro, int codigoProfesor, DateTime fechaPrestamo, DateTime fechaDevolucion)
         {
             DPrestamo data = new DPrestamo();
+            DLibro libro = new DLibro();
             Prestamo obj = new Prestamo();
 
             obj.codigoLibro = codigoLibro;
@@ -27,13 +28,35 @@ namespace Biblioteca.Negocio
             obj.fechaPrestamo = fechaPrestamo;
             obj.fechaDevolucion = fechaDevolucion;
 
-            return data.crearPrestamo(obj);
+            
+            string resolve = libro.Prestar(codigoLibro);
+
+            if(resolve == "OK")
+            {
+                return data.crearPrestamo(obj);
+            } else
+            {
+                return "No hay ejemplares para prestar";
+            }
         }
 
-        public static string devolverPrestamo(int id)
+        public static string devolverPrestamo(int idPrestamo)
         {
             DPrestamo data = new DPrestamo();
-            return data.devolverPrestamo(id);
+            DLibro libro = new DLibro();
+            int codigoLibro = data.getLibroFromPrestamo(idPrestamo);
+//            return data.devolverPrestamo(id);
+
+            string resolve = libro.Devolver(codigoLibro);
+
+            if (resolve == "OK")
+            {
+                return data.devolverPrestamo(idPrestamo);
+            }
+            else
+            {
+                return "No hay ejemplares para prestar";
+            }
         }
     }
 }

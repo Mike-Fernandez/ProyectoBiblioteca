@@ -78,6 +78,7 @@ namespace Biblioteca.Presentacion
             this.dgvListadoLibros.ReadOnly = true;
             this.dgvListadoLibros.Size = new System.Drawing.Size(539, 218);
             this.dgvListadoLibros.TabIndex = 0;
+            this.dgvListadoLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoLibros_CellContentClick);
             // 
             // gboxBuscarProfesor
             // 
@@ -119,12 +120,13 @@ namespace Biblioteca.Presentacion
             // 
             // btnPrestamo
             // 
-            this.btnPrestamo.Location = new System.Drawing.Point(863, 480);
+            this.btnPrestamo.Location = new System.Drawing.Point(854, 464);
             this.btnPrestamo.Name = "btnPrestamo";
             this.btnPrestamo.Size = new System.Drawing.Size(201, 42);
             this.btnPrestamo.TabIndex = 5;
             this.btnPrestamo.Text = "Registrar Préstamo";
             this.btnPrestamo.UseVisualStyleBackColor = true;
+            this.btnPrestamo.Click += new System.EventHandler(this.btnPrestamo_Click);
             // 
             // btnBuscarLibro
             // 
@@ -166,6 +168,7 @@ namespace Biblioteca.Presentacion
             this.dgvListadoProfesores.ReadOnly = true;
             this.dgvListadoProfesores.Size = new System.Drawing.Size(504, 218);
             this.dgvListadoProfesores.TabIndex = 0;
+            this.dgvListadoProfesores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoProfesores_CellContentClick);
             // 
             // SeleccionarProfesor
             // 

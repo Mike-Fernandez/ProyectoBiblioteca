@@ -87,5 +87,35 @@ namespace Biblioteca.Datos
             }
             return rpta;
         }
+
+        public int getLibroFromPrestamo(int codigoPrestamo)
+        {
+            int codigoLibro;
+            SqlConnection sqlCon = new SqlConnection();
+            try
+            {
+                sqlCon = Conexion.getInstancia().crearConexion();
+                SqlCommand command = new SqlCommand("prestamo_getLibro", sqlCon);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add("@codigo_prestamo", SqlDbType.VarChar).Value = codigoPrestamo;
+                SqlParameter parExiste = new SqlParameter();
+                parExiste.ParameterName = "@codigo_libro";
+                parExiste.SqlDbType = SqlDbType.Int;
+                parExiste.Direction = ParameterDirection.Output;
+                command.Parameters.Add(parExiste);
+                sqlCon.Open();
+                command.ExecuteNonQuery();
+                codigoLibro = Convert.ToInt32(parExiste.Value);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (sqlCon.State == ConnectionState.Open) sqlCon.Close();
+            }
+            return codigoLibro;
+        }
     }
 }
