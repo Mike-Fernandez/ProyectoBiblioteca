@@ -52,7 +52,7 @@ namespace Biblioteca.Presentacion
         {
             try
             {
-                dgvListadoProfesores.DataSource = NPrestamo.ListarPorProfesor(id);
+                dgvPrestamosProfesor.DataSource = NPrestamo.ListarPorProfesor(id);
             }
             catch (Exception ex)
             {
@@ -108,19 +108,20 @@ namespace Biblioteca.Presentacion
 
         private void dgvListadoLibros_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvListadoLibros.Columns["Seleccionar"].Index)
+            if (e.ColumnIndex == dgvListadoLibros.Columns["SeleccionarLibros"].Index)
             {
-                DataGridViewCheckBoxCell chckSeleccionar = (DataGridViewCheckBoxCell)dgvListadoLibros.Rows[e.RowIndex].Cells["Seleccionar"];
+                DataGridViewCheckBoxCell chckSeleccionar = (DataGridViewCheckBoxCell)dgvListadoLibros.Rows[e.RowIndex].Cells["SeleccionarLibros"];
                 chckSeleccionar.Value = !Convert.ToBoolean(chckSeleccionar.Value);
             }
         }
 
         private void dgvListadoProfesores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgvListadoProfesores.Columns["Seleccionar"].Index)
+            if (e.ColumnIndex == dgvListadoProfesores.Columns["SeleccionarProfesor"].Index)
             {
-                DataGridViewCheckBoxCell chckSeleccionar = (DataGridViewCheckBoxCell)dgvListadoProfesores.Rows[e.RowIndex].Cells["Seleccionar"];
+                DataGridViewCheckBoxCell chckSeleccionar = (DataGridViewCheckBoxCell)dgvListadoProfesores.Rows[e.RowIndex].Cells["SeleccionarProfesor"];
                 chckSeleccionar.Value = !Convert.ToBoolean(chckSeleccionar.Value);
+                this.listarPrestamosProfesor(Convert.ToInt32(dgvListadoProfesores.Rows[e.RowIndex].Cells[1].Value));
             }
         }
 
