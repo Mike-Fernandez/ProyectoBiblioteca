@@ -32,8 +32,8 @@ namespace Biblioteca.Presentacion
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.seleccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bibliotecaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuConsultar = new System.Windows.Forms.ToolStripMenuItem();
+            this.MnuMantenimiento = new System.Windows.Forms.ToolStripMenuItem();
             this.librosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prestamosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolucionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,8 +76,8 @@ namespace Biblioteca.Presentacion
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.seleccionToolStripMenuItem,
-            this.bibliotecaToolStripMenuItem,
+            this.MnuConsultar,
+            this.MnuMantenimiento,
             this.viewMenu,
             this.windowsMenu,
             this.helpMenu,
@@ -89,23 +89,23 @@ namespace Biblioteca.Presentacion
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
-            // seleccionToolStripMenuItem
+            // MnuConsultar
             // 
-            this.seleccionToolStripMenuItem.Name = "seleccionToolStripMenuItem";
-            this.seleccionToolStripMenuItem.Size = new System.Drawing.Size(116, 20);
-            this.seleccionToolStripMenuItem.Text = "Consultar Material";
-            this.seleccionToolStripMenuItem.Click += new System.EventHandler(this.seleccionToolStripMenuItem_Click);
+            this.MnuConsultar.Name = "MnuConsultar";
+            this.MnuConsultar.Size = new System.Drawing.Size(116, 20);
+            this.MnuConsultar.Text = "Consultar Material";
+            this.MnuConsultar.Click += new System.EventHandler(this.seleccionToolStripMenuItem_Click);
             // 
-            // bibliotecaToolStripMenuItem
+            // MnuMantenimiento
             // 
-            this.bibliotecaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MnuMantenimiento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.librosToolStripMenuItem,
             this.prestamosToolStripMenuItem,
             this.devolucionesToolStripMenuItem,
             this.reportesToolStripMenuItem});
-            this.bibliotecaToolStripMenuItem.Name = "bibliotecaToolStripMenuItem";
-            this.bibliotecaToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
-            this.bibliotecaToolStripMenuItem.Text = "Mantenimiento";
+            this.MnuMantenimiento.Name = "MnuMantenimiento";
+            this.MnuMantenimiento.Size = new System.Drawing.Size(101, 20);
+            this.MnuMantenimiento.Text = "Mantenimiento";
             // 
             // librosToolStripMenuItem
             // 
@@ -126,6 +126,7 @@ namespace Biblioteca.Presentacion
             this.devolucionesToolStripMenuItem.Name = "devolucionesToolStripMenuItem";
             this.devolucionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.devolucionesToolStripMenuItem.Text = "Devoluciones";
+            this.devolucionesToolStripMenuItem.Click += new System.EventHandler(this.devolucionesToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -139,13 +140,13 @@ namespace Biblioteca.Presentacion
             // librosRegistradosToolStripMenuItem
             // 
             this.librosRegistradosToolStripMenuItem.Name = "librosRegistradosToolStripMenuItem";
-            this.librosRegistradosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.librosRegistradosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.librosRegistradosToolStripMenuItem.Text = "Libros Registrados";
             // 
             // prestamosActivosToolStripMenuItem
             // 
             this.prestamosActivosToolStripMenuItem.Name = "prestamosActivosToolStripMenuItem";
-            this.prestamosActivosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.prestamosActivosToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.prestamosActivosToolStripMenuItem.Text = "Prestamos Activos";
             // 
             // viewMenu
@@ -389,6 +390,7 @@ namespace Biblioteca.Presentacion
             this.Name = "FrmHome";
             this.Text = "Sistema de Biblioteca";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmHome_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -427,13 +429,13 @@ namespace Biblioteca.Presentacion
         private System.Windows.Forms.ToolStripButton printPreviewToolStripButton;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.ToolStripMenuItem bibliotecaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuMantenimiento;
         private System.Windows.Forms.ToolStripMenuItem librosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem prestamosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewMenu;
         private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem seleccionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MnuConsultar;
         private System.Windows.Forms.ToolStripMenuItem devolucionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem librosRegistradosToolStripMenuItem;

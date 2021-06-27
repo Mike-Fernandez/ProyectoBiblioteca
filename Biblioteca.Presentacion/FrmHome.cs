@@ -13,6 +13,11 @@ namespace Biblioteca.Presentacion
     public partial class FrmHome : Form
     {
         private int childFormNumber = 0;
+        public int idUsuario;
+        public int idRol;
+        public string nombreRol;
+        public string nombre;
+
 
         public FrmHome()
         {
@@ -131,6 +136,29 @@ namespace Biblioteca.Presentacion
         private void prestamosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmPrestamo frm = new FrmPrestamo();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void FrmHome_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bienvenido: " + this.nombre, "Biblioteca", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (this.nombreRol.Equals("Admin"))
+            {
+                MnuMantenimiento.Enabled = true;
+                MnuConsultar.Enabled = true;
+            }
+            else
+            {
+                MnuMantenimiento.Enabled = false;
+                MnuConsultar.Enabled = true;
+            }
+        }
+
+        private void devolucionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDevolucion frm = new FrmDevolucion();
             frm.MdiParent = this;
             frm.Show();
         }

@@ -48,11 +48,19 @@ namespace Biblioteca.Presentacion
             }
         }
 
-        private void listarPrestamosProfesor(int id)
+        private void listarPrestamosProfesor()
         {
             try
             {
-                dgvPrestamosProfesor.DataSource = NPrestamo.ListarPorProfesor(id);
+                foreach(DataGridViewRow row in dgvListadoProfesores.Rows)
+                {
+                    if (Convert.ToBoolean(row.Cells[0].Value))
+                    {
+                        int id = Convert.ToInt32(row.Cells[1].Value);
+                        dgvPrestamosProfesor.DataSource = NPrestamo.ListarPorProfesor(id);
+                        break;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -64,11 +72,11 @@ namespace Biblioteca.Presentacion
         {
             try
             {
-                if (Convert.ToString(cboBuscarLibro.SelectedValue) == "Titulo")
+                if (Convert.ToString(cboBuscarLibro.Text).Equals("Titulo"))
                 {
                     dgvListadoLibros.DataSource = NLibro.buscarTitulo(txtBuscarLibro.Text);
                 }
-                else if (Convert.ToString(cboBuscarLibro.SelectedValue) == "Autor")
+                else if (Convert.ToString(cboBuscarLibro.Text).Equals("Autor"))
                 {
                     dgvListadoLibros.DataSource = NLibro.buscarAutor(txtBuscarLibro.Text);
                 }
@@ -83,7 +91,7 @@ namespace Biblioteca.Presentacion
         {
             try
             {
-                dgvListadoProfesores.DataSource = NUsuario.listarProfesores();
+                dgvListadoProfesores.DataSource = NUsuario.BuscarProfesor(txtBuscarProfesor.Text);
             }
             catch (Exception ex)
             {
@@ -121,7 +129,7 @@ namespace Biblioteca.Presentacion
             {
                 DataGridViewCheckBoxCell chckSeleccionar = (DataGridViewCheckBoxCell)dgvListadoProfesores.Rows[e.RowIndex].Cells["SeleccionarProfesor"];
                 chckSeleccionar.Value = !Convert.ToBoolean(chckSeleccionar.Value);
-                this.listarPrestamosProfesor(Convert.ToInt32(dgvListadoProfesores.Rows[e.RowIndex].Cells[1].Value));
+                this.listarPrestamosProfesor(/*Convert.ToInt32(dgvListadoProfesores.Rows[e.RowIndex].Cells[1].Value)*/);
             }
         }
 
@@ -130,7 +138,7 @@ namespace Biblioteca.Presentacion
             try
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("Realmente deseas eliminar el(los) registro(s)?", "Sistema de biblioteca",
+                Opcion = MessageBox.Show("Desea realizar el prestamo?", "Sistema de biblioteca",
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (Opcion == DialogResult.OK)
                 {
@@ -165,13 +173,24 @@ namespace Biblioteca.Presentacion
                     {
                         this.MensajeError(rpta);
                     }
-                    this.listarPrestamosProfesor(codigoProfesor);
+                    this.listarLibros();
+                    this.listarPrestamosProfesor();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void btnBuscarLibro_Click(object sender, EventArgs e)
+        {
+            this.BuscarLibro();
+        }
+
+        private void btnBuscarProfesor_Click(object sender, EventArgs e)
+        {
+            this.BuscarProfesor();
         }
     }
 }

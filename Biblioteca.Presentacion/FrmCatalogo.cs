@@ -35,11 +35,11 @@ namespace Biblioteca.Presentacion
         {
             try
             {
-                if (Convert.ToString(cboBuscar.SelectedValue) == "Titulo")
+                if (Convert.ToString(cboBuscar.Text).Equals("Titulo"))
                 {
                     dgvListadoLibros.DataSource = NLibro.buscarTitulo(txtBuscar.Text);
                     lblTotal.Text = "Total registros " + Convert.ToString(dgvListadoLibros.Rows.Count);
-                } else if (Convert.ToString(cboBuscar.SelectedValue) == "Autor")
+                } else if (Convert.ToString(cboBuscar.Text).Equals("Autor"))
                 {
                     dgvListadoLibros.DataSource = NLibro.buscarAutor(txtBuscar.Text);
                     lblTotal.Text = "Total registros " + Convert.ToString(dgvListadoLibros.Rows.Count);

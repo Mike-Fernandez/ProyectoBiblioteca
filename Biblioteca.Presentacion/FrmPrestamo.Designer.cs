@@ -30,26 +30,26 @@ namespace Biblioteca.Presentacion
         private void InitializeComponent()
         {
             this.gboxbuscarLibro = new System.Windows.Forms.GroupBox();
-            this.dgvListadoLibros = new System.Windows.Forms.DataGridView();
-            this.gboxBuscarProfesor = new System.Windows.Forms.GroupBox();
-            this.gboxPrestamosActivos = new System.Windows.Forms.GroupBox();
-            this.dtpDevolucion = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaDevolucion = new System.Windows.Forms.Label();
-            this.btnPrestamo = new System.Windows.Forms.Button();
             this.btnBuscarLibro = new System.Windows.Forms.Button();
             this.cboBuscarLibro = new System.Windows.Forms.ComboBox();
             this.txtBuscarLibro = new System.Windows.Forms.TextBox();
+            this.dgvListadoLibros = new System.Windows.Forms.DataGridView();
+            this.SeleccionarLibros = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.gboxBuscarProfesor = new System.Windows.Forms.GroupBox();
+            this.btnBuscarProfesor = new System.Windows.Forms.Button();
+            this.txtBuscarProfesor = new System.Windows.Forms.TextBox();
             this.dgvListadoProfesores = new System.Windows.Forms.DataGridView();
             this.SeleccionarProfesor = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SeleccionarLibros = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtBuscarProfesor = new System.Windows.Forms.TextBox();
-            this.btnBuscarProfesor = new System.Windows.Forms.Button();
+            this.gboxPrestamosActivos = new System.Windows.Forms.GroupBox();
             this.dgvPrestamosProfesor = new System.Windows.Forms.DataGridView();
+            this.dtpDevolucion = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaDevolucion = new System.Windows.Forms.Label();
+            this.btnPrestamo = new System.Windows.Forms.Button();
             this.gboxbuscarLibro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoLibros)).BeginInit();
             this.gboxBuscarProfesor.SuspendLayout();
-            this.gboxPrestamosActivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProfesores)).BeginInit();
+            this.gboxPrestamosActivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosProfesor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,6 +66,35 @@ namespace Biblioteca.Presentacion
             this.gboxbuscarLibro.TabStop = false;
             this.gboxbuscarLibro.Text = "Busqueda de Libros";
             // 
+            // btnBuscarLibro
+            // 
+            this.btnBuscarLibro.Location = new System.Drawing.Point(438, 37);
+            this.btnBuscarLibro.Name = "btnBuscarLibro";
+            this.btnBuscarLibro.Size = new System.Drawing.Size(107, 23);
+            this.btnBuscarLibro.TabIndex = 5;
+            this.btnBuscarLibro.Text = "Buscar";
+            this.btnBuscarLibro.UseVisualStyleBackColor = true;
+            this.btnBuscarLibro.Click += new System.EventHandler(this.btnBuscarLibro_Click);
+            // 
+            // cboBuscarLibro
+            // 
+            this.cboBuscarLibro.FormattingEnabled = true;
+            this.cboBuscarLibro.Items.AddRange(new object[] {
+            "Titulo",
+            "Autor"});
+            this.cboBuscarLibro.Location = new System.Drawing.Point(300, 40);
+            this.cboBuscarLibro.Name = "cboBuscarLibro";
+            this.cboBuscarLibro.Size = new System.Drawing.Size(121, 21);
+            this.cboBuscarLibro.TabIndex = 4;
+            this.cboBuscarLibro.Text = "Titulo";
+            // 
+            // txtBuscarLibro
+            // 
+            this.txtBuscarLibro.Location = new System.Drawing.Point(6, 40);
+            this.txtBuscarLibro.Name = "txtBuscarLibro";
+            this.txtBuscarLibro.Size = new System.Drawing.Size(288, 20);
+            this.txtBuscarLibro.TabIndex = 3;
+            // 
             // dgvListadoLibros
             // 
             this.dgvListadoLibros.AllowUserToAddRows = false;
@@ -80,6 +109,14 @@ namespace Biblioteca.Presentacion
             this.dgvListadoLibros.TabIndex = 0;
             this.dgvListadoLibros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoLibros_CellContentClick);
             // 
+            // SeleccionarLibros
+            // 
+            this.SeleccionarLibros.HeaderText = "Seleccionar";
+            this.SeleccionarLibros.Name = "SeleccionarLibros";
+            this.SeleccionarLibros.ReadOnly = true;
+            this.SeleccionarLibros.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.SeleccionarLibros.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // gboxBuscarProfesor
             // 
             this.gboxBuscarProfesor.Controls.Add(this.btnBuscarProfesor);
@@ -92,6 +129,43 @@ namespace Biblioteca.Presentacion
             this.gboxBuscarProfesor.TabStop = false;
             this.gboxBuscarProfesor.Text = "Busqueda de profesor";
             // 
+            // btnBuscarProfesor
+            // 
+            this.btnBuscarProfesor.Location = new System.Drawing.Point(296, 34);
+            this.btnBuscarProfesor.Name = "btnBuscarProfesor";
+            this.btnBuscarProfesor.Size = new System.Drawing.Size(107, 23);
+            this.btnBuscarProfesor.TabIndex = 2;
+            this.btnBuscarProfesor.Text = "Buscar";
+            this.btnBuscarProfesor.UseVisualStyleBackColor = true;
+            this.btnBuscarProfesor.Click += new System.EventHandler(this.btnBuscarProfesor_Click);
+            // 
+            // txtBuscarProfesor
+            // 
+            this.txtBuscarProfesor.Location = new System.Drawing.Point(6, 37);
+            this.txtBuscarProfesor.Name = "txtBuscarProfesor";
+            this.txtBuscarProfesor.Size = new System.Drawing.Size(254, 20);
+            this.txtBuscarProfesor.TabIndex = 1;
+            // 
+            // dgvListadoProfesores
+            // 
+            this.dgvListadoProfesores.AllowUserToAddRows = false;
+            this.dgvListadoProfesores.AllowUserToDeleteRows = false;
+            this.dgvListadoProfesores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListadoProfesores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SeleccionarProfesor});
+            this.dgvListadoProfesores.Location = new System.Drawing.Point(6, 67);
+            this.dgvListadoProfesores.Name = "dgvListadoProfesores";
+            this.dgvListadoProfesores.ReadOnly = true;
+            this.dgvListadoProfesores.Size = new System.Drawing.Size(504, 218);
+            this.dgvListadoProfesores.TabIndex = 0;
+            this.dgvListadoProfesores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoProfesores_CellContentClick);
+            // 
+            // SeleccionarProfesor
+            // 
+            this.SeleccionarProfesor.HeaderText = "Seleccionar";
+            this.SeleccionarProfesor.Name = "SeleccionarProfesor";
+            this.SeleccionarProfesor.ReadOnly = true;
+            // 
             // gboxPrestamosActivos
             // 
             this.gboxPrestamosActivos.Controls.Add(this.dgvPrestamosProfesor);
@@ -101,6 +175,17 @@ namespace Biblioteca.Presentacion
             this.gboxPrestamosActivos.TabIndex = 2;
             this.gboxPrestamosActivos.TabStop = false;
             this.gboxPrestamosActivos.Text = "Préstamos activos del profesor";
+            // 
+            // dgvPrestamosProfesor
+            // 
+            this.dgvPrestamosProfesor.AllowUserToAddRows = false;
+            this.dgvPrestamosProfesor.AllowUserToDeleteRows = false;
+            this.dgvPrestamosProfesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrestamosProfesor.Location = new System.Drawing.Point(6, 24);
+            this.dgvPrestamosProfesor.Name = "dgvPrestamosProfesor";
+            this.dgvPrestamosProfesor.ReadOnly = true;
+            this.dgvPrestamosProfesor.Size = new System.Drawing.Size(705, 150);
+            this.dgvPrestamosProfesor.TabIndex = 0;
             // 
             // dtpDevolucion
             // 
@@ -128,89 +213,6 @@ namespace Biblioteca.Presentacion
             this.btnPrestamo.UseVisualStyleBackColor = true;
             this.btnPrestamo.Click += new System.EventHandler(this.btnPrestamo_Click);
             // 
-            // btnBuscarLibro
-            // 
-            this.btnBuscarLibro.Location = new System.Drawing.Point(438, 37);
-            this.btnBuscarLibro.Name = "btnBuscarLibro";
-            this.btnBuscarLibro.Size = new System.Drawing.Size(107, 23);
-            this.btnBuscarLibro.TabIndex = 5;
-            this.btnBuscarLibro.Text = "Buscar";
-            this.btnBuscarLibro.UseVisualStyleBackColor = true;
-            // 
-            // cboBuscarLibro
-            // 
-            this.cboBuscarLibro.FormattingEnabled = true;
-            this.cboBuscarLibro.Items.AddRange(new object[] {
-            "Titulo",
-            "Autor"});
-            this.cboBuscarLibro.Location = new System.Drawing.Point(300, 40);
-            this.cboBuscarLibro.Name = "cboBuscarLibro";
-            this.cboBuscarLibro.Size = new System.Drawing.Size(121, 21);
-            this.cboBuscarLibro.TabIndex = 4;
-            this.cboBuscarLibro.Text = "Titulo";
-            // 
-            // txtBuscarLibro
-            // 
-            this.txtBuscarLibro.Location = new System.Drawing.Point(6, 40);
-            this.txtBuscarLibro.Name = "txtBuscarLibro";
-            this.txtBuscarLibro.Size = new System.Drawing.Size(288, 20);
-            this.txtBuscarLibro.TabIndex = 3;
-            // 
-            // dgvListadoProfesores
-            // 
-            this.dgvListadoProfesores.AllowUserToAddRows = false;
-            this.dgvListadoProfesores.AllowUserToDeleteRows = false;
-            this.dgvListadoProfesores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListadoProfesores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.SeleccionarProfesor});
-            this.dgvListadoProfesores.Location = new System.Drawing.Point(6, 67);
-            this.dgvListadoProfesores.Name = "dgvListadoProfesores";
-            this.dgvListadoProfesores.ReadOnly = true;
-            this.dgvListadoProfesores.Size = new System.Drawing.Size(504, 218);
-            this.dgvListadoProfesores.TabIndex = 0;
-            this.dgvListadoProfesores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoProfesores_CellContentClick);
-            // 
-            // SeleccionarProfesor
-            // 
-            this.SeleccionarProfesor.HeaderText = "Seleccionar";
-            this.SeleccionarProfesor.Name = "SeleccionarProfesor";
-            this.SeleccionarProfesor.ReadOnly = true;
-            // 
-            // SeleccionarLibros
-            // 
-            this.SeleccionarLibros.HeaderText = "Seleccionar";
-            this.SeleccionarLibros.Name = "SeleccionarLibros";
-            this.SeleccionarLibros.ReadOnly = true;
-            this.SeleccionarLibros.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.SeleccionarLibros.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // txtBuscarProfesor
-            // 
-            this.txtBuscarProfesor.Location = new System.Drawing.Point(6, 37);
-            this.txtBuscarProfesor.Name = "txtBuscarProfesor";
-            this.txtBuscarProfesor.Size = new System.Drawing.Size(254, 20);
-            this.txtBuscarProfesor.TabIndex = 1;
-            // 
-            // btnBuscarProfesor
-            // 
-            this.btnBuscarProfesor.Location = new System.Drawing.Point(296, 34);
-            this.btnBuscarProfesor.Name = "btnBuscarProfesor";
-            this.btnBuscarProfesor.Size = new System.Drawing.Size(107, 23);
-            this.btnBuscarProfesor.TabIndex = 2;
-            this.btnBuscarProfesor.Text = "Buscar";
-            this.btnBuscarProfesor.UseVisualStyleBackColor = true;
-            // 
-            // dgvPrestamosProfesor
-            // 
-            this.dgvPrestamosProfesor.AllowUserToAddRows = false;
-            this.dgvPrestamosProfesor.AllowUserToDeleteRows = false;
-            this.dgvPrestamosProfesor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrestamosProfesor.Location = new System.Drawing.Point(6, 24);
-            this.dgvPrestamosProfesor.Name = "dgvPrestamosProfesor";
-            this.dgvPrestamosProfesor.ReadOnly = true;
-            this.dgvPrestamosProfesor.Size = new System.Drawing.Size(705, 150);
-            this.dgvPrestamosProfesor.TabIndex = 0;
-            // 
             // FrmPrestamo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,8 +232,8 @@ namespace Biblioteca.Presentacion
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoLibros)).EndInit();
             this.gboxBuscarProfesor.ResumeLayout(false);
             this.gboxBuscarProfesor.PerformLayout();
-            this.gboxPrestamosActivos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListadoProfesores)).EndInit();
+            this.gboxPrestamosActivos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosProfesor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

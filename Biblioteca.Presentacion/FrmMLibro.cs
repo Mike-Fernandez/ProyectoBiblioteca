@@ -24,6 +24,7 @@ namespace Biblioteca.Presentacion
             {
                 dgvListado.DataSource = NLibro.listarTodos();
                 this.Formato();
+                this.Limpiar();
                 lblTotal.Text = "Total registros " + Convert.ToString(dgvListado.Rows.Count);
             }
             catch (Exception ex)
@@ -36,14 +37,16 @@ namespace Biblioteca.Presentacion
         {
             try
             {
-                if (Convert.ToString(cboBuscar.SelectedValue) == "Titulo")
+                if (Convert.ToString(cboBuscar.Text).Equals("Titulo"))
                 {
                     dgvListado.DataSource = NLibro.buscarTitulo(txtBuscar.Text);
+                    this.Formato();
                     lblTotal.Text = "Total registros " + Convert.ToString(dgvListado.Rows.Count);
                 }
-                else if (Convert.ToString(cboBuscar.SelectedValue) == "Autor")
+                else if (Convert.ToString(cboBuscar.Text).Equals("Autor"))
                 {
                     dgvListado.DataSource = NLibro.buscarAutor(txtBuscar.Text);
+                    this.Formato();
                     lblTotal.Text = "Total registros " + Convert.ToString(dgvListado.Rows.Count);
                 }
             }
@@ -56,7 +59,9 @@ namespace Biblioteca.Presentacion
         private void Formato()
         {
             dgvListado.Columns[0].Visible = false;
-            btnActualizar.Visible = false;
+            //btnInsertar.Visible = true;
+            //btnActualizar.Visible = false;
+            //btnEliminar.Visible = false;
         }
 
         private void Limpiar()
@@ -78,6 +83,7 @@ namespace Biblioteca.Presentacion
             errorIcono.Clear();
 
             dgvListado.Columns[0].Visible = false;
+            btnInsertar.Visible = true;
             btnEliminar.Visible = false;
             btnActualizar.Visible = false;
             chckSeleccionar.Checked = false;
@@ -121,7 +127,7 @@ namespace Biblioteca.Presentacion
                 {
                     rpta = NLibro.Insertar(Convert.ToInt32(numudNumeroEjemplares.Value), Convert.ToInt32(txtIsbn.Text), txtTitulo.Text.Trim(),
                         txtAutor.Text.Trim(), txtEditorial.Text.Trim(), txtEditionYear.Text.Trim(), Convert.ToInt32(txtNumeroEdicion.Text),
-                        txtPais.Text.Trim(), txtIdioma.Text.Trim(), Convert.ToString(cboMateria.SelectedValue), Convert.ToInt32(numudNumeroPaginas.Value),
+                        txtPais.Text.Trim(), txtIdioma.Text.Trim(), Convert.ToString(cboMateria.Text), Convert.ToInt32(numudNumeroPaginas.Value),
                         txtUbicacion.Text.Trim(), txtDescripcion.Text.Trim());
                     if (rpta.Equals("OK"))
                     {

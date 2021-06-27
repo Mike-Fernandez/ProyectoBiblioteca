@@ -23,12 +23,14 @@ namespace Biblioteca.Negocio
             DLibro libro = new DLibro();
             Prestamo obj = new Prestamo();
 
+            if (fechaDevolucion.CompareTo(fechaPrestamo) < 0)
+                return "Esta fecha es incorrecta, la fecha de devolucion no puede ser previa a la fecha de prestamo";
+
             obj.codigoLibro = codigoLibro;
             obj.codigoProfesor = codigoProfesor;
             obj.fechaPrestamo = fechaPrestamo;
             obj.fechaDevolucion = fechaDevolucion;
 
-            
             string resolve = libro.Prestar(codigoLibro);
 
             if(resolve == "OK")
@@ -45,7 +47,6 @@ namespace Biblioteca.Negocio
             DPrestamo data = new DPrestamo();
             DLibro libro = new DLibro();
             int codigoLibro = data.getLibroFromPrestamo(idPrestamo);
-//            return data.devolverPrestamo(id);
 
             string resolve = libro.Devolver(codigoLibro);
 
