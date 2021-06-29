@@ -71,10 +71,10 @@ namespace Biblioteca.Presentacion
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
+//        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
+//        {
+//            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+//        }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -161,6 +161,18 @@ namespace Biblioteca.Presentacion
             FrmDevolucion frm = new FrmDevolucion();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void librosRegistradosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmReporteLibros reporte = new Reportes.FrmReporteLibros();
+            reporte.ShowDialog();
+        }
+
+        private void prestamosActivosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.FrmReportePrestamos reporte = new Reportes.FrmReportePrestamos();
+            reporte.ShowDialog();
         }
     }
 }
